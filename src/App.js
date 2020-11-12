@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Routes from './routes';
+import { Container } from 'reactstrap';
+import { ContextWrapper } from './user-context' // Wrap ContextWarpper with brackets as it is not exported as default
+import "./App.css";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContextWrapper>
+      <Container>
+        <h1>Sports App</h1>
+        <div className='content'>
+          <Routes />
+        </div>
+      </Container>
+    </ContextWrapper>
   );
 }
 
